@@ -1,7 +1,10 @@
+import { useNavigation } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Animated, { FadeIn, FadeInDown, FadeInUp, FadeOut } from 'react-native-reanimated';
 const index = () => {
+
+    const navigation = useNavigation()
   return (
     <View className="bg-white h-full w-full">
       <StatusBar style="light" />
@@ -53,7 +56,7 @@ const index = () => {
                     Don't have an account?  
                 </Text>
                 
-                <TouchableOpacity ><Text className="text-sky-400 font-bold ml-1">Sign Up</Text></TouchableOpacity>
+                <TouchableOpacity onPress={()=> navigation.navigate("signup")}><Text className="text-sky-400 font-bold ml-1">Sign Up</Text></TouchableOpacity>
             </Animated.View>
         </View>
       </View>
